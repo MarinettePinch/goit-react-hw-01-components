@@ -30,10 +30,9 @@ function TransactionsHistory({ transactions }) {
 }
 
 TransactionsHistory.propTypes = {
-  transactions: PropTypes.array,
-  type: PropTypes.string,
-  amount: PropTypes.string,
-  currency: PropTypes.string,
+  transactions: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired
+  })),
 };
 
 export default TransactionsHistory;

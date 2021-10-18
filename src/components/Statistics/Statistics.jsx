@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import StatisticItems from './StatisticItems';
+import StatisticItem from './StatisticItem';
 
 const Statistic = ({ statisticalData }) => {
   return (
@@ -10,7 +10,7 @@ const Statistic = ({ statisticalData }) => {
       <ul className="stat-list">
         {statisticalData.map(statistic => (
           <li key={statistic.id} className="item">
-            <StatisticItems
+            <StatisticItem
               label={statistic.label}
               percentage={statistic.percentage}
             />
@@ -22,9 +22,9 @@ const Statistic = ({ statisticalData }) => {
 };
 
 Statistic.propTypes = {
-  statisticalData: PropTypes.array,
-  label: PropTypes.string,
-  percentage: PropTypes.number,
+  statisticalData: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired
+  })),
 };
 
 export default Statistic;
