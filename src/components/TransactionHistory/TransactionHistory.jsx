@@ -3,7 +3,7 @@ import TransactionsHistoryTableRow from './TransactionsHistoryTableRow';
 
 function TransactionsHistory({ transactions }) {
   return (
-    <table class="transaction-history">
+    <table className="transaction-history">
       <thead>
         <tr>
           <th>Type</th>
@@ -15,12 +15,13 @@ function TransactionsHistory({ transactions }) {
       <tbody>
         <>
           {transactions.map(transaction => (
-            <TransactionsHistoryTableRow
-              key={transaction.id}
-              type={transaction.type}
-              amount={transaction.amount}
-              currency={transaction.currency}
-            />
+            <tr key={transaction.id}>
+              <TransactionsHistoryTableRow
+                type={transaction.type}
+                amount={transaction.amount}
+                currency={transaction.currency}
+              />
+            </tr>
           ))}
         </>
       </tbody>

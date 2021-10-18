@@ -8,15 +8,14 @@ const Statistic = ({ statisticalData }) => {
       <h2 className="title">Upload stats</h2>
 
       <ul className="stat-list">
-        <>
-          {statisticalData.map(statistic => (
+        {statisticalData.map(statistic => (
+          <li key={statistic.id} className="item">
             <StatisticItems
-              key={statistic.id}
               label={statistic.label}
               percentage={statistic.percentage}
             />
-          ))}
-        </>
+          </li>
+        ))}
       </ul>
     </section>
   );

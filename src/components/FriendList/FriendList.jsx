@@ -6,12 +6,13 @@ function FriendList({ friends }) {
     <ul className="friend-list">
       <>
         {friends.map(friend => (
-          <FriendsListItem
-            key={friend.id}
-            avatar={friend.avatar}
-            name={friend.name}
-            isOnline={friend.isOnline}
-          />
+          <li key={friend.id} className="item">
+            <FriendsListItem
+              avatar={friend.avatar}
+              name={friend.name}
+              isOnline={friend.isOnline}
+            />
+          </li>
         ))}
       </>
     </ul>
